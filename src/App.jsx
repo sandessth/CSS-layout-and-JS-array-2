@@ -1,34 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const names = ['Lost', 'The Black Sails','Breaking Bad', 'Peaky Blinders', 'The legend of Korra','Avatar the last airbender']
+  
+  let listing_array = []
+ for (let i=0; i<names.length; i++)
+ {
+  listing_array[i] = <li>{names[i]}</li>
+ }
+ console.log(listing_array)
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className='head'><h1> CSS Layout and Printing Names in a React Project with Vite</h1></div>
+      <div className='list'><h3>List of some top series according to IMDB printed using for loop</h3></div>
+      {/* <div className='grid-container'>
+      <div class="grid-item">1</div>
+      <div class="grid-item">2</div>
+      <div class="grid-item">3</div>
+      <div class="grid-item">4</div>
+      <div class="grid-item">5</div>
+      <div class="grid-item">6</div>
+      <div class="grid-item">7</div>
+      <div class="grid-item">8</div>
+      </div> */}
+      <div className="list">
+        {listing_array}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <div className='list'>
+    {/* {names.map(names=><li>{names}</li>)} */}
+    </div>
+      
     </>
+    
   )
 }
 
